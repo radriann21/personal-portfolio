@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/inter':
+        specifier: 5.1.1
+        version: 5.1.1
+      '@fontsource-variable/josefin-sans':
+        specifier: 5.1.1
+        version: 5.1.1
       '@tailwindcss/vite':
         specifier: 4.0.6
         version: 4.0.6(vite@6.1.0(jiti@2.4.2)(lightningcss@1.29.1))
@@ -206,6 +212,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/inter@5.1.1':
+    resolution: {integrity: sha512-OpXFTmiH6tHkYijMvQTycFKBLK4X+SRV6tet1m4YOUH7SzIIlMqDja+ocDtiCA72UthBH/vF+3ZtlMr2rN/wIw==}
+
+  '@fontsource-variable/josefin-sans@5.1.1':
+    resolution: {integrity: sha512-yNnqEfwy0iV61kylO4gHv10tIYTE+/qq2jssI5ppsm/xaUgEWdeUCQibVqBZJTrOSucUBTnCx4VFtLiwE4IIgQ==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -1792,6 +1804,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.24.2':
     optional: true
+
+  '@fontsource-variable/inter@5.1.1': {}
+
+  '@fontsource-variable/josefin-sans@5.1.1': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
