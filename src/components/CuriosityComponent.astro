@@ -1,0 +1,11 @@
+---
+import SpotifyRecentlyPlayed from "./SpotifyRecentlyPlayed.astro"
+---
+
+<article class="col-span-1 md:col-span-1 lg:col-span-2 row-span-1 h-full flex flex-col">
+  <div class="rounded-xl bg-neutral-900/60 border-[1px] border-sky-500/20 transition-shadow duration-300 hover:shadow-sm hover:shadow-sky-700 w-full p-4">
+    <SpotifyRecentlyPlayed server:defer>
+      <p class="p-4 font-bold text-sky-500" slot="fallback">Loading Track...</p>
+    </SpotifyRecentlyPlayed>
+  </div>
+</article>
