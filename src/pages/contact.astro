@@ -6,7 +6,7 @@ import Navigation from "../components/Navigation.astro";
 <Layout title="Contacto">
   <section class="max-w-full lg:max-w-5xl h-screen mx-auto flex flex-col py-12 px-4">
     <Navigation />  
-    <main class="w-full md:w-[60%] mx-auto flex flex-col mt-8 space-y-4">
+    <main id="main" class="w-full md:w-[60%] mx-auto flex flex-col mt-8 space-y-4">
       <h1 class="font-headings text-2xl font-bold">Creemos soluciones increibles. ¡Escribe tu mensaje!</h1>
       <form class="flex flex-col space-y-8">
         <section>
@@ -28,6 +28,20 @@ import Navigation from "../components/Navigation.astro";
 </Layout>
 
 <script>
+  import { inView, animate } from "motion";
+
+  inView("#main", (element) => {
+    animate(element, 
+    {
+      y: [100, 0],
+      opacity: [0, 1]
+    },
+    {
+      duration: 0.6
+    }
+  )
+  })
+  
   const form = document.querySelector("form");
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
