@@ -6,8 +6,8 @@ import Navigation from "../components/Navigation.astro";
 <Layout title="Contacto">
   <section class="max-w-full lg:max-w-5xl h-screen mx-auto flex flex-col py-12 px-4">
     <Navigation />  
-    <main class="w-full md:w-[60%] mx-auto flex flex-col mt-8 space-y-4">
-      <h1 class="font-headings text-2xl font-bold">Creemos soluciones increibles. ¡Contacta conmigo!</h1>
+    <main id="main" class="w-full md:w-[60%] mx-auto flex flex-col mt-8 space-y-4">
+      <h1 class="font-headings text-2xl font-bold">Creemos soluciones increibles. ¡Escribe tu mensaje!</h1>
       <form class="flex flex-col space-y-8">
         <section>
           <label class="block text-slate-300 font-bold font-headings" for="name">Nombre</label>
@@ -19,7 +19,7 @@ import Navigation from "../components/Navigation.astro";
         </section>
         <section>
           <label class="block text-slate-300 font-bold font-headings" for="message">Mensaje</label>
-          <textarea class="h-28 resize-none active:outline-none focus:outline-none focus:border-sky-500/70 mt-2 w-full p-2 rounded-md border-[1px] border-sky-500/20" name="message" id="message" placeholder="Escribe tu mensaje..."></textarea>
+          <textarea class="h-28 resize-none active:outline-none focus:outline-none focus:border-sky-500/70 mt-2 w-full p-2 rounded-md border-[1px] border-sky-500/20" name="message" id="message" placeholder="Dime que necesitas..."></textarea>
         </section>
         <button class="w-full p-2 mt-2 rounded-md border-[1px] bg-sky-500/60 text-white border-sky-500/20 transition-colors duration-300 hover:bg-sky-500/20 cursor-pointer" type="submit">Enviar mensaje</button>
       </form>
@@ -28,6 +28,20 @@ import Navigation from "../components/Navigation.astro";
 </Layout>
 
 <script>
+  import { inView, animate } from "motion";
+
+  inView("#main", (element) => {
+    animate(element, 
+    {
+      y: [100, 0],
+      opacity: [0, 1]
+    },
+    {
+      duration: 0.6
+    }
+  )
+  })
+  
   const form = document.querySelector("form");
   form?.addEventListener("submit", (e) => {
     e.preventDefault();

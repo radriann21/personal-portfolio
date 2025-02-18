@@ -11,7 +11,7 @@ const options = [
 ]
 ---
 
-<header class="w-full flex items-center justify-between font-headings">
+<header id="navbar" class="w-full flex items-center justify-between font-headings">
 	<ul class="list-none flex items-center">
 		{
 			options.map((option) => (
@@ -28,3 +28,19 @@ const options = [
 		</button>
 	</div>
 </header>
+
+<script>
+	import { animate, inView } from "motion"
+
+	inView("#navbar", (element) => {
+		animate(element, 
+		{
+			y: [100, 0],
+			opacity: [0, 1]
+		},
+		{
+			duration: 0.5,
+		}
+	)
+	})
+</script>

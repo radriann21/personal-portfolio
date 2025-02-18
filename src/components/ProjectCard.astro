@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  technologies: string[];
+  link: string;
+  code: string;
+}
+
+const { title, description, technologies, link, code } = Astro.props;
+---
+
+<article id="project" class="col-span-1 md:col-span-1 lg:col-span-2 row-span-1 rounded-md bg-neutral-900/60 border-[1px] border-sky-500/20 transition-shadow duration-300 hover:shadow-sm hover:shadow-sky-700 p-4 md:p-6">
+  <div class="flex flex-col space-y-2">
+    <h3 class="font-headings text-xl font-bold text-white">{title}</h3>
+    <p class="text-slate-400 text-sm">
+      {description}
+    </p>
+    <div class="flex flex-wrap items-center gap-2 mt-2">
+      {
+        technologies.map((tech) => (
+          <span class="rounded-full border border-slate-400 px-2.5 py-0.5 text-[12px] whitespace-nowrap text-sky-500">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+  <div class="mt-6">
+    <a href={code} target="_blank" class="text-sm px-4 py-[6px] rounded-md border-[1px] border-sky-500/20 transition-all duration-30 hover:bg-sky-500/10">
+      See code
+    </a>
+    <a href={link} target="_blank" class="ml-2 text-sm px-4 py-[6px] rounded-md border-[1px] border-sky-500/20 transition-all duration-300 hover:bg-sky-500/10">
+      Live Demo
+    </a>
+  </div>
+</article>
+
+
+<script>
+  import { inView, animate } from "motion"
+
+  inView("#project", (element) => {
+    animate(element, 
+    {
+      y: [100, 0],
+      opacity: [0, 1]
+    },
+    {
+      duration: 0.8,
+      delay: 0.3
+    }
+  )
+  })
+</script>

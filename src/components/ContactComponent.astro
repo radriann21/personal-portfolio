@@ -1,4 +1,4 @@
-<article class="col-span-1 md:col-span-1 lg:col-span-2 row-span-1 rounded-md bg-neutral-900/60 border-[1px] border-sky-500/20 transition-shadow duration-300 hover:shadow-sm hover:shadow-sky-700 text-center p-6">
+<article id="contact" class="col-span-1 md:col-span-1 lg:col-span-2 row-span-1 h-full rounded-md bg-neutral-900/60 border-[1px] border-sky-500/20 transition-shadow duration-300 hover:shadow-sm hover:shadow-sky-700 text-center p-6">
   <h3 class="font-headings text-lg font-bold">Contacto</h3>
   <ul class="list-none flex flex-wrap flex-col space-y-4 text-sm">
     <li class="inline-flex items-center space-x-2">
@@ -22,3 +22,19 @@
     </li>
   </ul>
 </article>
+
+<script>
+  import { inView, animate } from "motion"
+
+  inView("#contact", (element) => {
+    animate(element, 
+    {
+      y: [100, 0],
+      opacity: [0, 1]
+    },
+    {
+      duration: 0.8
+    }
+  )
+  })
+</script>
