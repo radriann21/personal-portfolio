@@ -3,8 +3,8 @@
 @theme {
   --font-headings: "Josefin Sans Variable", serif;
   --font-body: "Inter Variable", sans-serif;
-  --color-main-bg: #1B1B1B;
-  --color-card-bg: #131314;
+  --color-main-bg: #0F0F0F;
+  --color-card-bg: #1f1f1f;
   --color-main-text: #e2e8f0;
 
   --animate-spin: spin 2.5s linear infinite;
