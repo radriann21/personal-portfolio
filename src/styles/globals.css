@@ -8,4 +8,5 @@
   --color-main-text: #e2e8f0;
 
   --animate-spin: spin 2.5s linear infinite;
+  --animate-pulse: pulse 4s linear infinite;
 }
