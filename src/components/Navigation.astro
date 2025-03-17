@@ -1,30 +1,22 @@
 ---
-const options = [
-	{
-		label: 'Inicio',
-		url: '/'
-	},
-	{
-		label: 'Contacto',
-		url: '/contact'
-	}
-]
+import { options } from "../utils/navOptions"
 ---
 
 <header id="navbar" class="w-full flex items-center justify-between font-headings">
-	<ul class="list-none flex items-center">
+	<ul class="list-none flex items-center space-x-8">
 		{
 			options.map((option) => (
-				<li class="cursor-pointer font-semibold py-[6px] px-4 border border-transparent transition-all duration-300 hover:bg-slate-400/10 hover:border-sky-700/40 rounded-md mr-2">
+				<li class="cursor-pointer font-semibold relative group">
 					<a href={option.url}>{option.label}</a>
+					<div class="opacity-0 absolute w-full h-[1px] bg-sky-700/70 transition-opacity duration-300 ease-in group-hover:opacity-100"></div>
 				</li>
 			))
 		}
 	</ul>
 	<div>
-		<button class="text-sm inline-flex items-center cursor-pointer py-[6px] px-6 border border-sky-700/40 bg-slate-400/10 transition-all duration-300 rounded-md hover:bg-slate-400/20 hover:border-sky-700/60">
+		<button class="text-sm inline-flex items-center cursor-pointer py-[6px] px-6 border border-sky-700/40 bg-slate-500/10 transition-all duration-300 rounded-md hover:bg-transparent hover:border-sky-700/60">
 			Descargar CV
-			<svg class="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+			<svg class="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
 		</button>
 	</div>
 </header>
@@ -32,15 +24,18 @@ const options = [
 <script>
 	import { animate, inView } from "motion"
 
-	inView("#navbar", (element) => {
-		animate(element, 
+	inView("#navbar", ((element) => {
+		let animationTriggered = false
+		if (!animationTriggered) {
+			animate(element, 
 		{
-			y: [100, 0],
 			opacity: [0, 1]
 		},
 		{
-			duration: 0.5,
+			duration: 1.2,
+			ease: 'easeIn'
 		}
 	)
-	})
+		}
+	}))
 </script>

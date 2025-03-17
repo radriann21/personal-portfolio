@@ -6,6 +6,7 @@ import CuriosityComponent from './CuriosityComponent.astro';
 import ProjectsList from './ProjectsList.astro';
 import ExperienceList from './ExperienceList.astro';
 import EducationComponent from './EducationComponent.astro';
+import EventsComponent from './EventsComponent.astro';
 ---
 
 
@@ -27,20 +28,26 @@ import EducationComponent from './EducationComponent.astro';
   <ProjectsList />
   <ExperienceList />
   <EducationComponent />
+  <!-- <EventsComponent /> -->
 </main>
 
 <script>
   import { animate, inView } from "motion"
 
   inView('#about', (element) => {
-    animate(element, 
+    let animationTriggered = false
+    if (!animationTriggered) {
+      animate(element, 
     {
       x: [-100, 0],
       opacity: [0, 1]
     },
     {
-      duration: 0.8
+      duration: .5,
+      ease: 'easeIn'
     }
   )
+      animationTriggered = true
+    }
   })
 </script>

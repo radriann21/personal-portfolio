@@ -10,15 +10,18 @@
 <script>
   import { animate, inView } from "motion"
 
-  inView("#hero", (element) => {
-    animate(element, 
-      {
-        y: [100, 0],
-        opacity: [0, 1]
-      },
-      {
-        duration: 0.5,
-      }
-    )
-  })
+  inView("#hero", ((element) => {
+    let animationTriggered = false
+    if (!animationTriggered) {
+      animate(element, 
+		{
+      opacity: [0, 1]
+		},
+		{
+			duration: 1.2,
+			ease: 'easeIn',
+		}
+	)
+    }
+	}))
 </script>
