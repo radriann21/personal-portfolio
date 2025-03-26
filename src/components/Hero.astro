@@ -1,27 +1,9 @@
-<section id="hero" class="w-full mt-8">
+<section id="hero" class="w-full mt-8 animate-fadeIn">
   <div>
     <h1 class="font-headings text-4xl font-bold text-slate-100">Hola, soy Adrian</h1>
     <p class="text-slate-300 w-full md:w-[60%] md:text-lg">
-      <span class="font-bold text-sky-300">Desarrollador web</span> enfocado en la creación de experiencias digitales <span class="font-bold text-sky-300">increibles y manejables</span>, contribuyendo también al desarrollo de software de gran impacto.
+      <span class="font-bold text-sky-300">Desarrollador web</span> enfocado en la creación de experiencias digitales <span class="font-bold text-sky-300">minimalistas y agradables</span>, contribuyendo también al desarrollo de <span class="font-bold text-sky-300">software de gran impacto</span>.
     </p>
   </div>
 </section>
 
-<script>
-  import { animate, inView } from "motion"
-
-  inView("#hero", ((element) => {
-    let animationTriggered = false
-    if (!animationTriggered) {
-      animate(element, 
-		{
-      opacity: [0, 1]
-		},
-		{
-			duration: 1.2,
-			ease: 'easeIn',
-		}
-	)
-    }
-	}))
-</script>

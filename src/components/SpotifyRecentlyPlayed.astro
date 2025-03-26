@@ -1,5 +1,6 @@
 ---
 import { actions } from "astro:actions";
+import { Image } from "astro:assets";
 
 const { data, error } = await Astro.callAction(actions.spotify.playing, {})
 ---
@@ -11,7 +12,13 @@ const { data, error } = await Astro.callAction(actions.spotify.playing, {})
 
     <div class="w-full flex items-center justify-between">
       <div class="flex justify-center items-center space-x-4">
-        <img class="rounded-full w-14 h-14 animate-spin" src={data.spotify.item.album.images[0].url} alt={data.spotify.item.name}>
+        <Image 
+          width={64}
+          height={64}
+          class="rounded-full w-16 h-16 animate-spin" 
+          src={data.spotify.item.album.images[0].url} 
+          alt={data.spotify.item.name} 
+        />
         <div class="flex flex-col">
           <p class="font-bold font-headings">{data.spotify.item.name}</p>
           <p class="text-sm">{data.spotify.item.artists[0].name}</p>
