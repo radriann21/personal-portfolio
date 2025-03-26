@@ -26,12 +26,5 @@ export const projects = [
     technologies: ["NextJS", "TailwindCSS", "Monaco Editor", "Zustand", "React Markdown"],
     link: "https://readmydoc.vercel.app/",
     code: "https://github.com/radriann21/readmydoc"
-  },
-  {
-    title: "E-Commerce - Origin Shop",
-    description: "Aplicación web de un E-Commerce para la compra de productos enfocada en la experiencia de usuario, interfaz agradable y facilidad de uso.",
-    technologies: ["NextJS", "TailwindCSS", "Zustand", "Supabase"],
-    link: "#",
-    code: "#"
   }
 ]
