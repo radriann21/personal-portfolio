@@ -3,8 +3,13 @@ import {
   SPOTIFY_CLIENT_ID,
   SPOTIFY_CLIENT_SECRET,
   SPOTIFY_REFRESH_TOKEN,
+  RESEND_API_KEY
 } from "astro:env/server";
 import type { SpotifyCurrentlyPlayingResponse } from "../types";
+import { Resend } from "resend";
+import { z } from "astro:schema";
+
+const resend = new Resend(RESEND_API_KEY);
 
 export const server = {
   spotify: {
@@ -63,4 +68,29 @@ export const server = {
       },
     }),
   },
-};
+  send: defineAction({
+    accept: 'form',
+    input: z.object({
+      name: z.string().min(3),
+      email: z.string().email(),
+      message: z.string().min(10)
+    }),
+    handler: async ({ name, email, message }) => {
+      const { data, error } = await resend.emails.send({
+        from: "contact.message.com",
+        to: "radriann21@gmail.com",
+        subject: "Test email",
+        html: `${name} <${email}> <br> ${message}`
+      });
+
+      if (error) {
+        throw new ActionError({
+          code: 'BAD_REQUEST',
+          message: error.message,
+        })
+      }
+
+      return data;
+    }
+  })
+}
