@@ -1,0 +1,21 @@
+---
+import { projects } from "../utils/projectsList";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section class="w-full h-full mt-12">
+  <h2 class="font-headings text-2xl font-bold text-slate-200">Proyectos</h2>
+  <div class="w-full mt-6 grid grid-cols-1 lg:grid-cols-4 grid-rows-2 gap-6">
+    {
+      projects.map((project) => (
+        <ProjectCard 
+          title={project.title}
+          description={project.description}
+          technologies={project.technologies}
+          link={project.link}
+          code={project.code}
+        />
+      ))
+    }
+  </div>
+</section>

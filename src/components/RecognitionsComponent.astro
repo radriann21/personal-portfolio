@@ -1,0 +1,28 @@
+---
+const recognitions = [
+  {
+    name: "Primer lugar feria de programación",
+    organization: "Universidad Politecnica Mario Briceño Irragorry",
+    year: "2025",
+    description: "Ganador con el proyecto Open Source: BenchReAI; editor de código con asistente de IA integrada para el análisis de código y performance."
+  }
+]
+---
+
+<section class="w-full mt-12">
+  <h3 class="font-headings text-2xl font-bold text-slate-200">Reconocimientos</h3>
+  <ul class="mt-8 flex flex-col space-y-4">
+    {
+      recognitions.map(recognition => (
+        <li class="border-b-1 border-slate-600 pb-1">
+          <h4 class="text-lg font-bold text-main-text font-headings"> {recognition.name}
+          </h4>
+          <p>{recognition.organization}</p>
+          <span class="text-slate-500 text-sm">{recognition.year}</span>
+          <p class="text-sm">{recognition.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
