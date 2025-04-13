@@ -21,10 +21,10 @@ export const projects = [
     code: "https://github.com/radriann21/prettyai-colors"
   },
   {
-    title: "Readmydoc",
-    description: "Aplicación web que permite la generación y edición de documentos markdown mediante plantillas enfocadas a diferentes tipos de proyectos de código abierto.",
-    technologies: ["NextJS", "TailwindCSS", "Monaco Editor", "Zustand", "React Markdown"],
-    link: "https://readmydoc.vercel.app/",
-    code: "https://github.com/radriann21/readmydoc"
+    title: "REST Coutries",
+    description: "App web que permite visualizar países obtenidos mediante la API de RestCountries. Permite filtrar los países y obtener más detalles en una página individual.",
+    technologies: ["NextJS", "TailwindCSS", "Zustand", "React Query"],
+    link: "https://rest-countries-nextjs-delta.vercel.app/",
+    code: "https://github.com/radriann21/rest-countries-nextjs"
   }
 ]

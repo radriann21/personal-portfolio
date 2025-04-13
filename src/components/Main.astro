@@ -6,6 +6,7 @@ import CuriosityComponent from './CuriosityComponent.astro';
 import ProjectsList from './ProjectsList.astro';
 import ExperienceList from './ExperienceList.astro';
 import EducationComponent from './EducationComponent.astro';
+import RecognitionsComponent from './RecognitionsComponent.astro';
 ---
 
 
@@ -15,11 +16,11 @@ import EducationComponent from './EducationComponent.astro';
     <TechComponent />
     <ContactComponent />
     <ProjectCard 
-      title='Noteskit'
-      description="Aplicación web para gestionar notas y tareas de manera organizada y cómoda, con la opción de filtrar, organizar y editar notas de manera eficiente."
-      technologies={["NextJS", "TypeScript", "Tailwind", "Supabase"]}
-      link='#'
-      code='https://github.com/radriann21/noteskit'
+      title='BenchReAI'
+      description="App web  ganadora en la feria de programación de la universidad Mario Briceño Irragorry. Permite la escritura de código, ejecución y análisis del mismo, además el tener un chat con IA para obtener explicaciones, análisis y sugerencias."
+      technologies={["NextJS", "TypeScript", "Tailwind", "Gemini API"]}
+      link='https://bench-reai.vercel.app/'
+      code='https://github.com/radriann21/benchreai'
       starred={true}
     /> 
     <CuriosityComponent />
@@ -27,6 +28,7 @@ import EducationComponent from './EducationComponent.astro';
   <ProjectsList />
   <ExperienceList />
   <EducationComponent />
+  <RecognitionsComponent />
 </main>
 
 <script>
