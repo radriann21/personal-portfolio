@@ -5,7 +5,6 @@ import {
   SPOTIFY_REFRESH_TOKEN,
 } from "astro:env/server";
 import type { SpotifyCurrentlyPlayingResponse } from "../types";
-import { z } from "astro:schema";
 
 export const server = {
   spotify: {
@@ -46,7 +45,7 @@ export const server = {
 
           if (response.status === 204) {
             return {
-              message: "I'm not currently playing anything on Spotify",
+              message: "Ahora mismo, todo está en silencio.",
             };
           }
 
