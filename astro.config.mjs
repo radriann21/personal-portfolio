@@ -10,7 +10,11 @@ export default defineConfig({
   },
   integrations: [react()],
   output: "server",
-  adapter: vercel({}),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true
+    }
+  }),  
   env: {
     schema: {
       SPOTIFY_CLIENT_ID: envField.string({
@@ -28,11 +32,6 @@ export default defineConfig({
         access: 'secret',
         default: ""
       }),
-      RESEND_API_KEY: envField.string({
-        context: 'server',
-        access: 'secret',
-        default: ""
-      })
     },
   },
 });
