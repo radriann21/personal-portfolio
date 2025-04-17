@@ -17,7 +17,8 @@ const { data, error } = await Astro.callAction(actions.spotify.playing, {})
           height={64}
           class="rounded-full w-16 h-16 animate-spin" 
           src={data.spotify.item.album.images[0].url} 
-          alt={data.spotify.item.name} 
+          alt={data.spotify.item.name}
+          loading="eager" 
         />
         <div class="flex flex-col">
           <p class="font-bold font-headings">{data.spotify.item.name}</p>
@@ -26,7 +27,7 @@ const { data, error } = await Astro.callAction(actions.spotify.playing, {})
       </div>
       <div class="bg-neutral-950/20 rounded-md p-2 transition-colors duration-300 ease-in-out hover:bg-neutral-950/40">
         <a href={data.spotify.item.external_urls.spotify} target="_blank">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/><title>Play</title></svg>
         </a>
       </div>
     </div>
