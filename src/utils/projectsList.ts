@@ -1,12 +1,5 @@
 export const projects = [
   {
-    title: "Space Tourism Landing",
-    description: "Una landing page para una agencia relacionada al turismo espacial, usando NextJS junto a Tailwind, asegurando un diseño enfocado en el dinamismo.",
-    technologies: ["NextJS", "TypeScript", "motion"],
-    link: "https://space-tourism-eight-jade.vercel.app/",
-    code: "https://github.com/radriann21/space-tourism-nextjs"
-  },
-  {
     title: "Sunnyside Agency Landing",
     description: "Landing page enfocada a una página de una empresa dedicada al diseño de marca y la creación de campañas de marketing digital. Desarrollada usando Astro.",
     technologies: ["Astro", "TailwindCSS", "daisyui"],
@@ -26,5 +19,12 @@ export const projects = [
     technologies: ["NextJS", "TailwindCSS", "Zustand", "React Query"],
     link: "https://rest-countries-nextjs-delta.vercel.app/",
     code: "https://github.com/radriann21/rest-countries-nextjs"
+  },
+  {
+    title: "Readmydoc",
+    description: "Aplicación web para la edición de Markdown para proyectos de software, permitiendo elegir entre diferentes plantillas predefinidas, además de exportar el documento en formato .md",
+    technologies: ["NextJS", "Monaco Editor", "Zustand", "TalwindCSS"],
+    link: "https://readmydoc.vercel.app/",
+    code: "https://github.com/radriann21/readmydoc"
   }
 ]

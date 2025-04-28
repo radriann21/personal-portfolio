@@ -1,18 +1,5 @@
 ---
-const experience = [
-  {
-    name: "Asistente de laboratorio universitario",
-    description: "Desempeñe tareas como la preparación de materiales para los estudiantes, la preparación de entornos y herramientas para el desarrollo de proyectos, además de desarrollar pequeños proyectos para el laboratorio tales como: un desafío de mecanografía, sistema de estudiantes, entre otros.",
-    startDate: "sep. 2023",
-    endDate: "ene. 2024"
-  },
-  {
-    name: "Asistente de ingeniero en sistemas",
-    description: "Fui parte de un equipo de tres personas para el desarrollo de diferentes proyectos de software enfocados en el area de desarrollo web, para la municipalidad de mi localidad. Además de ayudar con la implementación de nuevas tecnologías como Astro.",
-    startDate: "mar. 2024",
-    endDate: "ago. 2024"
-  }
-]
+import { experience } from "../utils/experienceList";
 ---
 
 <section class="w-full mt-12">
@@ -23,8 +10,11 @@ const experience = [
       experience.map((exp) => (
         <li class="border-b-1 border-slate-600 pb-1">
           <h4 class="font-headings text-lg">{exp.name}</h4>
+          <h5 class="font-headings text-base">{exp.company}</h5>
           <p class="font-body text-sm text-slate-400">{exp.description}</p>
-          <span class="text-slate-500 text-sm">{exp.startDate} - {exp.endDate}</span>
+          <span class="text-slate-500 text-sm">
+            {exp.startDate} - {exp.endDate}
+          </span>
         </li>
       ))
     }
