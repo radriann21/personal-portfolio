@@ -8,13 +8,17 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"]
+  },
   integrations: [react()],
   output: "server",
   adapter: vercel({
     webAnalytics: {
       enabled: true
     }
-  }),  
+  }),
   env: {
     schema: {
       SPOTIFY_CLIENT_ID: envField.string({
