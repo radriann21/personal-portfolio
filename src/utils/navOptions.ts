@@ -1,10 +1,10 @@
 export const options = [
 	{
-		label: 'Inicio',
-		url: '/'
+		labelKey: 'nav.home',
+		slug: '/'
 	},
 	{
-		label: 'Contacto',
-		url: '/contact'
+		labelKey: 'nav.about',
+		slug: '/contact'
 	}
-]
+];
