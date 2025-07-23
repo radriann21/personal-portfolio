@@ -1,17 +1,24 @@
 ---
 import { experience } from "../utils/experienceList";
+import { getLangFromUrl, getTranslations } from "../utils/translations";
+const lang = getLangFromUrl(Astro.url);
+const t = getTranslations(lang);
 ---
 
 <section class="w-full mt-12">
-  <h3 class="font-headings text-2xl font-bold text-slate-200">Experiencia</h3>
+  <h3 class="font-headings text-2xl font-bold text-slate-200">
+    {t("experience.title")}
+  </h3>
 
   <ul class="w-full mt-8 flex flex-col space-y-4">
     {
       experience.map((exp) => (
         <li class="border-b-1 border-slate-600 pb-1">
-          <h4 class="font-headings text-lg">{exp.name}</h4>
+          <h4 class="font-headings text-lg">{exp.name[lang]}</h4>
           <h5 class="font-headings text-base">{exp.company}</h5>
-          <p class="font-body text-sm text-slate-400">{exp.description}</p>
+          <p class="font-body text-sm text-slate-400">
+            {exp.description[lang]}
+          </p>
           <span class="text-slate-500 text-sm">
             {exp.startDate} - {exp.endDate}
           </span>

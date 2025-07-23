@@ -48,9 +48,12 @@ const t = getTranslations(lang);
     </a>
     <select
       class="bg-slate-500/10 border border-sky-700/40 rounded-md px-2 py-2 text-sm cursor-pointer transition-all duration-300 hover:border-sky-700/60 outline-none"
-      onchange="console.log(this.value); window.location.href=this.value"
+      onchange="window.location.href=this.value"
     >
-      <option class="bg-neutral-900" value="/"> Español </option>
+      <option class="bg-neutral-900">{t("selectLanguage")}</option>
+      <option class="bg-neutral-900" value={getRelativeLocaleUrl("es", "/")}>
+        Español
+      </option>
       <option class="bg-neutral-900" value={getRelativeLocaleUrl("en", "/")}
         >English</option
       >

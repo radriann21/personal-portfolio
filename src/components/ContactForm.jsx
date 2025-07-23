@@ -53,7 +53,7 @@ export const ContactForm = () => {
             {t("contact.labelName")}
           </label>
           <input
-            className="active:outline-none focus:outline-none focus:border-sky-500/70 mt-2 w-full p-2 rounded-md border-[1px] border-sky-500/20"
+            className="active:outline-none focus:outline-none focus:border-sky-500/70 w-full p-2 rounded-md border-[1px] border-sky-500/20"
             type="text"
             name="name"
             id="name"
