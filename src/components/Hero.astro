@@ -1,9 +1,21 @@
+---
+import { getLangFromUrl, getTranslations } from "../utils/translations";
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTranslations(lang);
+---
+
 <section id="hero" class="w-full mt-8 animate-fadeIn">
   <div>
-    <h1 class="font-headings text-4xl font-bold text-slate-100">Hola, soy Adrian</h1>
+    <h1 class="font-headings text-4xl font-bold text-slate-100">
+      {t("hero.title")}
+    </h1>
     <p class="text-slate-300 w-full md:w-[60%] md:text-lg">
-      <span class="font-bold text-sky-300">Desarrollador web</span> enfocado en la creación de experiencias digitales <span class="font-bold text-sky-300">minimalistas y agradables</span>, contribuyendo también al desarrollo de <span class="font-bold text-sky-300">software de gran impacto</span>.
+      <span class="font-bold text-sky-300">{t("hero.colored1")}</span>
+      {t("hero.subtitle1")}
+      <span class="font-bold text-sky-300">{t("hero.colored2")}</span>
+      {t("hero.subtitle2")}
+      <span class="font-bold text-sky-300">{t("hero.colored3")}</span>.
     </p>
   </div>
 </section>
-

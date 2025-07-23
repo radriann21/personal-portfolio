@@ -1,22 +1,62 @@
 ---
-import { options } from "../utils/navOptions"
+import { options } from "../utils/navOptions";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLangFromUrl, getTranslations } from "../utils/translations";
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTranslations(lang);
 ---
 
-<header id="navbar" class="w-full flex items-center justify-between font-headings animate-slideIn">
-	<ul class="list-none flex items-center space-x-8">
-		{
-			options.map((option) => (
-				<li class="cursor-pointer font-semibold relative group">
-					<a href={option.url}>{option.label}</a>
-					<div class="opacity-0 absolute w-full h-[1px] bg-sky-700/70 transition-opacity duration-300 ease-in group-hover:opacity-100"></div>
-				</li>
-			))
-		}
-	</ul>
-	<div>
-		<a href="/docs/cv.pdf" download="cv.pdf" class="text-sm inline-flex items-center cursor-pointer py-[6px] px-6 border border-sky-700/40 bg-slate-500/10 transition-all duration-300 rounded-md hover:bg-transparent hover:border-sky-700/60">
-			Descargar CV
-			<svg class="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-		</a>
-	</div>
+<header
+  id="navbar"
+  class="w-full flex items-center justify-between font-headings animate-slideIn"
+>
+  <ul class="list-none flex items-center space-x-8">
+    {
+      options.map((option) => (
+        <li class="cursor-pointer font-semibold relative group">
+          <a href={getRelativeLocaleUrl(lang, option.slug)}>
+            {t(option.labelKey as "nav.home" | "nav.about" | "nav.download")}
+          </a>
+          <div class="opacity-0 absolute w-full h-[1px] bg-sky-700/70 transition-opacity duration-300 ease-in group-hover:opacity-100" />
+        </li>
+      ))
+    }
+  </ul>
+  <div class="flex items-center w-fit space-x-2 md:space-x-4">
+    <a
+      href="/cv.pdf"
+      download="cv.pdf"
+      class="text-sm inline-flex items-center cursor-pointer py-[6px] px-4 border border-sky-700/40 bg-slate-500/10 transition-all duration-300 rounded-md hover:bg-transparent hover:border-sky-700/60"
+    >
+      <span class="hidden md:inline mr-1">{t("nav.download")}</span>CV
+      <svg
+        class="ml-2 w-4 h-4"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline
+          points="7 10 12 15 17 10"></polyline><line
+          x1="12"
+          x2="12"
+          y1="15"
+          y2="3"></line></svg
+      >
+    </a>
+    <select
+      class="bg-slate-500/10 border border-sky-700/40 rounded-md px-2 py-2 text-sm cursor-pointer transition-all duration-300 hover:border-sky-700/60 outline-none"
+      onchange="window.location.href=this.value"
+    >
+      <option class="bg-neutral-900">{t("selectLanguage")}</option>
+      <option class="bg-neutral-900" value={getRelativeLocaleUrl("es", "/")}>
+        Español
+      </option>
+      <option class="bg-neutral-900" value={getRelativeLocaleUrl("en", "/")}
+        >English</option
+      >
+    </select>
+  </div>
 </header>
