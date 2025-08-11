@@ -6,8 +6,8 @@ export const projects = [
       en: "Landing page focused on a company dedicated to brand design and the creation of digital marketing campaigns. Developed using Astro."
     },
     technologies: ["Astro", "TailwindCSS", "daisyui"],
-    link: "https://github.com/radriann21/sunnyside-agency-landing-astro",
-    code: "https://sunnyside-agency-landing-astro.vercel.app/"
+    link: "https://sunnyside-landing-astro.vercel.app/",
+    code: "https://github.com/radriann21/sunnyside-landing-astro"
   },
   {
     name: "PrettyAIColors",
