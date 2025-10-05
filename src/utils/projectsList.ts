@@ -5,19 +5,9 @@ export const projects = [
       es: "Landing page enfocada a una página de una empresa dedicada al diseño de marca y la creación de campañas de marketing digital. Desarrollada usando Astro.",
       en: "Landing page focused on a company dedicated to brand design and the creation of digital marketing campaigns. Developed using Astro."
     },
-    technologies: ["Astro", "TailwindCSS", "daisyui"],
-    link: "https://sunnyside-landing-astro.vercel.app/",
-    code: "https://github.com/radriann21/sunnyside-landing-astro"
-  },
-  {
-    name: "PrettyAIColors",
-    description: {
-      es: "Aplicación web para la creación de paletas de colores mediante diferentes algoritmos de generación de colores, además de inteligencia artificial. Permite además guardar paletas de colores para su uso futuro y exportarlas.",
-      en: "Web application for creating color palettes using different color generation algorithms, as well as artificial intelligence. It also allows saving color palettes for future use and exporting them."
-    },
-    technologies: ["NextJS", "TailwindCSS", "Zustand", "Gemini API", "chroma-js"],
-    link: "https://prettyai-colors.vercel.app/",
-    code: "https://github.com/radriann21/prettyai-colors"
+    technologies: ["Astro", "TailwindCSS", "motion"],
+    link: "https://react-rest-countries-app-livid.vercel.app/",
+    code: "https://github.com/radriann21/react-rest-countries-app"
   },
   {
     name: "REST Countries",
@@ -28,6 +18,16 @@ export const projects = [
     technologies: ["NextJS", "TailwindCSS", "Zustand", "React Query"],
     link: "https://rest-countries-nextjs-delta.vercel.app/",
     code: "https://github.com/radriann21/rest-countries-nextjs"
+  },
+  {
+    name: "PrettyAIColors",
+    description: {
+      es: "Aplicación web para la creación de paletas de colores mediante diferentes algoritmos de generación de colores, además de inteligencia artificial. Permite además guardar paletas de colores para su uso futuro y exportarlas.",
+      en: "Web application for creating color palettes using different color generation algorithms, as well as artificial intelligence. It also allows saving color palettes for future use and exporting them."
+    },
+    technologies: ["NextJS", "TailwindCSS", "Zustand", "Gemini API", "chroma-js"],
+    link: "https://prettyai-colors.vercel.app/",
+    code: "https://github.com/radriann21/prettyai-colors"
   },
   {
     name: "Readmydoc",
