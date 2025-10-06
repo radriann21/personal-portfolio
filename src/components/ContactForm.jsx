@@ -42,7 +42,7 @@ export const ContactForm = () => {
       <Toaster />
       <form
         ref={form}
-        className="flex flex-col space-y-8"
+        className="flex flex-col space-y-6"
         onSubmit={handleSendEmail}
       >
         <section>
